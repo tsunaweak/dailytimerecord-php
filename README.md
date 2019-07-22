@@ -39,8 +39,12 @@
 </ul>
 <ul>
   <h4>Trainee<h4>
-    <li><ul><li>Login and Logout</li></ul></li>
-    <li><ul><li>View Records</li></ul></li>
-    <li><ul><li>Export Records</li></ul></li>
+    <li>
+      <ul>
+        <li>Login and Logout</li>
+        <li>View Records</li>
+        <li>Export Records</li>
+      </ul>
+    </li>
 </ul>
 
