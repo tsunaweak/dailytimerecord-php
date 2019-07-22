@@ -4,7 +4,7 @@
 
 <h3>Features</h3>
 <ul>
-  Admin
+  <h4>Admin</h4>
   <li>
     <ul> 
       <h4>Main Page</h4>
@@ -37,10 +37,10 @@
     </ul>
   </li>
 </ul>
-<ul>
-  Trainee
+<ol>
+  <h4>Trainee<h4>
   <li>Login and Logout</li>
   <li>Viewing Records</li>
   <li>Exporting Records</li>
-</ul>
+</ol>
 
