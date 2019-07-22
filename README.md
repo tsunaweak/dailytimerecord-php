@@ -6,7 +6,8 @@
 <ul>
   Admin
   <li>
-    <ul> Main Page
+    <ul> 
+      <h4>Main Page</h4>
       <li>Adding Trainee</div>
       <li>Update Trainee</div>
       <li>Delete Trainee</div>
