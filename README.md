@@ -37,10 +37,10 @@
     </ul>
   </li>
 </ul>
-<ol>
+<ul>
   <h4>Trainee<h4>
-  <li>Login and Logout</li>
-  <li>Viewing Records</li>
-  <li>Exporting Records</li>
-</ol>
+    <li><ul><li>Login and Logout</li></ul></li>
+    <li><ul><li>View Records</li></ul></li>
+    <li><ul><li>Export Records</li></ul></li>
+</ul>
 
