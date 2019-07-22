@@ -8,37 +8,37 @@
   <li>
     <ul> 
       <h4>Main Page</h4>
-      <li>Adding Trainee</div>
-      <li>Update Trainee</div>
-      <li>Delete Trainee</div>
-      <li>View records of a trainee</div>
-      <li>Delete records of a trainee</div>
-      <li>Update records of a trainee</div>
+      <li>Adding Trainee</li>
+      <li>Update Trainee</li>
+      <li>Delete Trainee</li>
+      <li>View records of a trainee</li>
+      <li>Delete records of a trainee</li>
+      <li>Update records of a trainee</li>
     </ul>
   </li>
   <li>
     <ul> 
       <h4>Event Page</h4>
-      <li>Adding Event</div>
-      <li>Update Event</div>
-      <li>Delete Event</div>
+      <li>Adding Event</li>
+      <li>Update Event</li>
+      <li>Delete Event</li>
     </ul>
   </li>
   <li>
     <ul> 
       <h4>Other Page</h4>
-      <li>Set Deduction Time</div>
-      <li>Set Time after login</div>
-      <li>Set Time after logout</div>
-      <li>Set Time after logout</div>
-      <li>Change Account Credentials</div>
-      <li>Single Insert Trainee Record/div>
-      <li>Insert Trainee Records via Excel/div>
+      <li>Set Deduction Time</li>
+      <li>Set Time after login</li>
+      <li>Set Time after logout</li>
+      <li>Set Time after logout</li>
+      <li>Change Account Credentials</li>
+      <li>Single Insert Trainee Record</li>
+      <li>Insert Trainee Records via Excel</li>
     </ul>
   </li>
 </ul>
 <ul>
-  <h4>Trainee<h4>
+  <h4>Trainee</h4>
     <li>
       <ul>
         <li>Login and Logout</li>
