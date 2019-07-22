@@ -1,0 +1,41 @@
+<div class="modal fade" id="edit_trainee_modal">
+	<div class="modal-dialog modal-dialog-centered">
+		<div class="modal-content">
+			<div class="modal-header">
+				<span class="h2">Update Trainee</span>
+			</div>
+			<div class="modal-body">
+				<span id="modal_message_edit"></span>
+				<div class="form-group">
+					<label for="fname">Enter Fullname</label>
+					<input type="text" required="true" name="fname" id="edit_fname" placeholder="Fullname" class="form-control" autocomplete="false">
+				</div>
+				<div class="form-group">
+					<label for="uname">Enter Username</label>
+					<input type="text" required="true" name="uname" id="edit_uname" placeholder="Username" class="form-control" autocomplete="false">
+				</div>
+				<div class="form-group">
+					<label>Total No. of Hours</label>
+					<input type="text" name="cnhrs" disabled="true" required="true" id="edit_cnhrs" min="1" autocomplete="false" onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57" placeholder="Hours" class="form-control">
+				</div>
+				<div class="form-group">
+					<div class="input-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text">No of Hours</span>
+						</div>
+						<input type="text" name="nhrs" required="true" id="edit_nhrs" min="1" autocomplete="false" onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57" placeholder="Hours" class="form-control">	
+						<div class="input-group-append">
+							<select class="form-control input-group-text" id="edit_type">
+								<option value="add" selected="true">Add</option>
+								<option value="sub">Subtract</option>
+							</select>
+						</div>
+					</div>
+				</div>
+			<div class="modal-footer">
+				<button class="btn btn-danger" data-dismiss="modal">Close</button>
+				<button class="btn btn-primary" id="btn_update_trainee">Update</button>
+			</div>
+		</div>
+	</div>
+</div>

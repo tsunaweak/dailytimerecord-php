@@ -1,0 +1,62 @@
+<div class="modal fade" id="add_trainee_modal">
+	<div class="modal-dialog modal-dialog-centered">
+		<div class="modal-content">
+			<div class="modal-header">
+				<span class="h2">Add Trainee</span>
+			</div>
+			<div class="modal-body">
+				<span id="modal_message_trainee"></span>
+				<div class="form-group">
+					<label for="fname">Enter Fullname</label>
+					<input type="text" required="true" name="fname" id="fname" placeholder="Fullname" class="form-control" autocomplete="false">
+				</div>
+				<div class="form-group">
+					<label for="uname">Enter Username</label>
+					<input type="text" required="true" name="uname" id="uname" placeholder="Username" class="form-control" autocomplete="false">
+				</div>
+				<div class="form-group">
+					<label for="nhrs">Enter No. of Hours</label>
+					<input type="text" name="nhrs" required="true" id="nhrs" min="1" autocomplete="false" onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57" placeholder="Hours" class="form-control">
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button class="btn btn-danger" data-dismiss="modal">Close</button>
+				<button class="btn btn-primary" id="btn_save_trainee">Save</button>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="modal fade" id="update_record_modal">
+	<div class="modal-dialog modal-dialog-centered">
+		<div class="modal-content">
+			<div class="modal-header">
+				<span class="h2">Update Record</span>
+			</div>
+			<div class="modal-body">
+				<span id="modal_message_record"></span>
+				<div class="form-group">
+					<label for="start">Enter Login Timetamp</label>
+					<div class="input-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text"><i class="fas fa-hourglass-start"></i></span>
+						</div>
+						<input type="text" required="true" name="start" id="start" placeholder="Login Timetamp" class="form-control" autocomplete="false">
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="end">Enter Logout Timetamp</label>
+					<div class="input-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text"><i class="fas fa-hourglass-end"></i></span>
+						</div>
+						<input type="text" required="true" name="end" id="end" placeholder="Logout Timetamp" class="form-control" autocomplete="false">
+					</div>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button class="btn btn-danger" data-dismiss="modal">Close</button>
+				<button class="btn btn-primary" id="btn_update_record">Update</button>
+			</div>
+		</div>
+	</div>
+</div>

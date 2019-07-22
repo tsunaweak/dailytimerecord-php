@@ -1,0 +1,8 @@
+.nav-item{
+	padding: 0 15px;
+	margin: 2px 5px;
+}
+.active:hover{
+	background: #242A30;
+	border-radius: 5px;
+}
