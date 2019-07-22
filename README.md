@@ -16,5 +16,31 @@
       <li>Update records of a trainee</div>
     </ul>
   </li>
+  <li>
+    <ul> 
+      <h4>Event Page</h4>
+      <li>Adding Event</div>
+      <li>Update Event</div>
+      <li>Delete Event</div>
+    </ul>
+  </li>
+  <li>
+    <ul> 
+      <h4>Other Page</h4>
+      <li>Set Deduction Time</div>
+      <li>Set Time after login</div>
+      <li>Set Time after logout</div>
+      <li>Set Time after logout</div>
+      <li>Change Account Credentials</div>
+      <li>Single Insert Trainee Record/div>
+      <li>Insert Trainee Records via Excel/div>
+    </ul>
+  </li>
+</ul>
+<ul>
+  Trainee
+  <li>Login and Logout</li>
+  <li>Viewing Records</li>
+  <li>Exporting Records</li>
 </ul>
 
