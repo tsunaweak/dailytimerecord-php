@@ -10,7 +10,11 @@ class EventCont extends Models
 				$start = $this->date2sec($_POST['start']);
 				$end = $this->date2sec($_POST['end']);
 				$type = 0;
-				$add = $this->hrs2sec($_POST['add']);
+				if($this->isNum($_POST['add'])){
+					$add = $this->hrs2sec($_POST['add']);
+				}else{
+					$add = 0;
+				}
 			}else{
 				$start = $this->date2sec($_POST['start']);
 				$end = $this->date2sec($_POST['end']);
@@ -21,10 +25,14 @@ class EventCont extends Models
 			if($start >= $end){
 				$this->error = $this->dangerMessage('Event Start should be greater than Event End');
 			}else{
-				if($this->addEventMod($start, $end, $type, $add)){
-					$this->message = $this->successMessage('Event schedule scucessfully saved.');
+				if($start && $end){
+					if($this->addEventMod($start, $end, $type, $add)){
+						$this->message = $this->successMessage('Event schedule scucessfully saved.');
+					}else{
+						$this->error = $this->dangerMessage('Event schedule failed save.');
+					}
 				}else{
-					$this->error = $this->dangerMessage('Event schedule failed save.');
+					$this->error = $this->dangerMessage('Error occured, invalid date format');
 				}
 			}
 		}
@@ -82,17 +90,18 @@ class EventCont extends Models
 			if($start >= $end){
 				$this->error = $this->dangerMessage('Event Start should be greater than Event End');
 			}else{
-				if($this->updateEventMod($start, $end, $type, $add, $id)){
-					$this->message = $this->successMessage('Event schedule scucessfully updated.');
+				if($start && $end){
+					if($this->updateEventMod($start, $end, $type, $add, $id)){
+						$this->message = $this->successMessage('Event schedule scucessfully updated.');
+					}else{
+						$this->error = $this->dangerMessage('Event schedule failed update.');
+					}
 				}else{
-					$this->error = $this->dangerMessage('Event schedule failed update.');
+					$this->error = $this->dangerMessage('Error occured, invalid date format.');
 				}
 			}
 		}
 		$this->errorMessage($this->error, $this->message);	
 	}
 }
-
-
-
 ?>

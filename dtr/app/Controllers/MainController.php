@@ -129,10 +129,14 @@ class MainController extends TraineeCont
 		if($_POST['uname'] == ''){
 			$this->error = $this->dangerMessage('Username cannot be empty');
 		}else{
-			if($this->checkUname($_POST['uname'])){
-				$uname = $this->cleanString($_POST['uname']);
-				$data = $this->viewRecordsMod($uname);
-				$output = '<form method="POST" action="export/excel"><input type="hidden" value="'.$this->encryptString('export_excel').'" name="action"><input type="hidden" value="'.$this->encryptString($data[4]).'" name="select_id"><div class="modal-content"><div class="modal-header"><div class="row"><div class="col-auto mt-2"><span class="h5">Name: <span class="font-weight-bold">'.$data[0].'</span></span></div><div class="col-auto mt-2"><span class="h5">Remaining Time: <span class="font-weight-bold">'.$data[1].'</span></span></div><div class="col-auto mt-2"><span class="h5">Rendered Time: <span class="font-weight-bold">'.$data[2].'</span></span></div></div><button class="btn btn-primary" type="submit">Export</button></div><div class="modal-body"><div class="table-responsive"><table class="table"><thead><tr><th>Login Timestamp</th><th>Logout Timestamp</th><th>Spent Time</th></tr></thead><tbody>'.$data[3].'</tbody></table></div></div></div></form>';
+			if($this->isAlphaNum($_POST['uname'])){
+				if($this->checkUname($_POST['uname'])){
+					$uname = $this->cleanString($_POST['uname']);
+					$data = $this->viewRecordsMod($uname);
+					$output = '<form method="POST" action="export/excel"><input type="hidden" value="'.$this->encryptString('export_excel').'" name="action"><input type="hidden" value="'.$this->encryptString($data[4]).'" name="select_id"><div class="modal-content"><div class="modal-header"><div class="row"><div class="col-auto mt-2"><span class="h5">Name: <span class="font-weight-bold">'.$data[0].'</span></span></div><div class="col-auto mt-2"><span class="h5">Remaining Time: <span class="font-weight-bold">'.$data[1].'</span></span></div><div class="col-auto mt-2"><span class="h5">Rendered Time: <span class="font-weight-bold">'.$data[2].'</span></span></div></div><button class="btn btn-primary" type="submit">Export</button></div><div class="modal-body"><div class="table-responsive"><table class="table"><thead><tr><th>Login Timestamp</th><th>Logout Timestamp</th><th>Spent Time</th></tr></thead><tbody>'.$data[3].'</tbody></table></div></div></div></form>';
+				}else{
+					$this->error = $this->dangerMessage('Username not found.');
+				}
 			}else{
 				$this->error = $this->dangerMessage('Username not found.');
 			}
@@ -144,24 +148,28 @@ class MainController extends TraineeCont
 		echo json_encode($data);
 	}
 	public function stampAttendace($uname, $stamp){
-		if($this->checkTimeStamp($stamp)){
-			$stamp = $this->date2sec($stamp);
-			if($this->checkUname($uname)){
-				$id = $this->uname2id($uname);
-				if($this->hasLogin($id, $stamp)){
-					if($this->doLogout($id, $stamp)){
-						$this->message = $this->successMessage($uname .' has successfully <strong>logout</strong>.');
+		if($this->isAlphaNum($uname)){
+			if($this->checkTimeStamp($stamp)){
+				$stamp = $this->date2sec($stamp);
+				if($this->checkUname($uname)){
+					$id = $this->uname2id($uname);
+					if($this->hasLogin($id, $stamp)){
+						if($this->doLogout($id, $stamp)){
+							$this->message = $this->successMessage($uname .' has successfully <strong>logout</strong>.');
+						}
+					}else{
+						if($this->doLogin($id, $stamp)){
+							$this->message = $this->successMessage($uname .' has successfully <strong>login</strong>.');
+						}
 					}
 				}else{
-					if($this->doLogin($id, $stamp)){
-						$this->message = $this->successMessage($uname .' has successfully <strong>login</strong>.');
-					}
+					$this->error = $this->dangerMessage('Username not found, please try again.');
 				}
 			}else{
-				$this->error = $this->dangerMessage('Username not found, please try again.');
+				$this->error = $this->dangerMessage('Login Timestamp is not a valid date.');
 			}
 		}else{
-			$this->error = $this->dangerMessage('Login Timestamp is not a valid date.');
+			$this->error = $this->dangerMessage('Username not found.');
 		}
 	}
 	public function soloCheck(){
@@ -224,10 +232,15 @@ class MainController extends TraineeCont
 		if($_POST['uname'] == '' || $_POST['pword'] == ''){
 			$this->error = $this->dangerMessage('Please input credentials.');
 		}else{
-			$uname = $this->cleanString($_POST['uname']);
-			$pword = $this->hashString($_POST['pword']);
-			if($this->modelLogin($uname, $pword)){
-				$this->message = 'main';
+			//check if username is alphanumeric
+			if(ctype_alnum($this->cleanString($_POST['uname']))){
+				$uname = $this->cleanString($_POST['uname']);
+				$pword = $this->hashString($_POST['pword']);
+				if($this->modelLogin($uname, $pword)){
+					$this->message = 'main';
+				}else{
+					$this->error = $this->dangerMessage('Incorrect username or password.');
+				}
 			}else{
 				$this->error = $this->dangerMessage('Incorrect username or password.');
 			}
