@@ -40,8 +40,10 @@
       <li>Update Event</li>
       <li>Delete Event</li>
       <li>Type of Event
-      <li>Double Time</li>
-      <li>Additional Time</li>
+        <ul>
+          <li>Double Time - Multiply the spent time by 2.</li>
+          <li>Additional Time - Add the spent time by the assign additonal value.</li>
+        </ul>
       </li>
     </ul>
   </li>
