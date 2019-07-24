@@ -39,6 +39,10 @@
       <li>Adding Event</li>
       <li>Update Event</li>
       <li>Delete Event</li>
+      <li>Type of Event
+      <li>Double Time</li>
+      <li>Additional Time</li>
+      </li>
     </ul>
   </li>
   <li>
