@@ -187,19 +187,19 @@ class Views extends Router{
 		});
 		/*---END INDEX---*/
 		$action = $_SERVER['REQUEST_URI'];
-		//use to redirect the invalid directory to valid directory	
-		if($action == "/dtr_v2/public/admin"){
-			header('Location:/dtr_v2/public/admin/');
-		}else if($action == "/dtr_v2/public/admin/event/"){
+		//use to redirect the invalid path to valid path	
+		if($action == $root. "admin"){
+			header('Location:'. $root.'admin/');
+		}else if($action == $root."admin/event/"){
 			header('Location:'.$root.'admin/event');
-		}else if($action == "/dtr_v2/public/admin/main/"){
+		}else if($action == $root. "admin/main/"){
 			header('Location:'.$root.'admin/main');
-		}else if($action == "/dtr_v2/public/admin/others/"){
+		}else if($action == $root. "admin/others/"){
 			header('Location:'.$root.'admin/others');
-		}else if($action == "/dtr_v2/public/admin/logout/"){
+		}else if($action ==  $root. "admin/logout/"){
 			header('Location:'.$root.'admin/logout');
-		}else if($action == "/dtr_v2/public/view/"){
-			header('Location:/dtr_v2/public/view');
+		}else if($action == $root. "view/"){
+			header('Location:'. $root.'view');
 		}
 		$this->dispatch($action);
 	}
