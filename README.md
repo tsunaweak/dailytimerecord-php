@@ -20,7 +20,7 @@
 <h3> Default Credentials </h3>
 <div><strong>username: admin</strong></div>
 <div><strong>password: admin</strong></div>
-<div<strong>Demo: <a href="https://daily-time-record.000webhostapp.com/"> Daily Time Record</a></strong></div>
+<div<strong>Demo: <a href="https://daily-time-record.000webhostapp.com/" target="_blank"> Daily Time Record</a></strong></div>
 <h3>Features</h3>
 <ul>
   <h4>Admin</h4>
