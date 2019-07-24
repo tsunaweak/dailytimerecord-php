@@ -4,7 +4,12 @@ class Core
 {
 	public function date2sec($date){
 		date_default_timezone_set('Asia/Manila');
-		return strtotime($this->cleanString($date));
+		if(strtotime($this->cleanString($date))){
+			return strtotime($this->cleanString($date));	
+		}else{
+			return false;
+		}
+		
 	}
 	public function sec2date($sec){
 		$timestamp = new DateTime("@$sec");
@@ -82,6 +87,13 @@ class Core
 	}
 	public function isName($string){
 		if(preg_match("/^[a-zA-Z\040]+$/", $string)){
+			return true;
+		}else{
+			return false;
+		}
+	}
+	public function isAlphaNum($string){
+		if(ctype_alnum($string)){
 			return true;
 		}else{
 			return false;
