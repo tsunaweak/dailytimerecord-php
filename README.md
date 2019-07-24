@@ -6,7 +6,8 @@
   <li>Put the extracted file on the web root directory.</li>
   <li>Change the database credentials on "/dtr/app/Models/Models.php".</li>
   <li>Import the dtr.sql on the database.</li>
-  <li><strong>Note: If you are using linux, please grant permission to the folder.</strong></li>
+  <strong>Note: If you are using linux, please grant permission to the folder.</strong>
+  <strong>Note: This system is set to Philippines Timezone.</strong>
 </ol>
 
 <h3> Terminologies </h3>
