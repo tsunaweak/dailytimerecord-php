@@ -13,7 +13,7 @@
 <body>
 	<div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
 		<span><h1>404 Page not Found.</h1></span>
-		<a href="/dtr_v2/public" id="home">Home</a>
+		<a href="/dtr/public" id="home">Home</a>
 	</div>
 </body>
 </html>
