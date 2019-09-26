@@ -1,0 +1,5 @@
+$HOST = '172.105.121.44';
+$PORT = 3306;
+$UNAME = 'tsunaweak';
+$PWORD = 'zswxqm2031';
+$DB = 'vpnserver_db';
